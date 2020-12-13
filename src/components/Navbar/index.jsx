@@ -7,6 +7,7 @@ import Icon from 'components/Icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { types as themeTypes } from 'redux/ducks/settings';
 import menuItems from 'constants/menu';
+import { analyticsEvent } from 'services/firebase/analytics';
 import MenuDropdown from './MenuDropdown';
 
 const Navbar = () => {
@@ -118,6 +119,8 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => {
+              analyticsEvent('click_toggle_theme_navbar');
+
               dispatch({
                 type: themeTypes.SET_THEME,
                 payload: theme.themeName === 'dark' ? 'light' : 'dark',
