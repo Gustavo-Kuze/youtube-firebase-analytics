@@ -7,6 +7,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import menuItems from 'constants/menu';
 import { Link } from 'react-router-dom';
+import { analyticsEvent } from 'services/firebase/analytics';
 
 const Footer = () => {
   const theme = useSelector((state) => state.settings.theme);
@@ -57,6 +58,9 @@ const Footer = () => {
             Vamos trocar uma ideia!
           </p>
           <Button
+            onClick={() => {
+              analyticsEvent('click_cta_footer');
+            }}
             isResponsive={false}
             className="mt-5 w-full md:w-6/12 lg:4/12"
           >

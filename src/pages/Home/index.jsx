@@ -8,6 +8,7 @@ import { types } from 'redux/ducks/example';
 import Footer from 'components/Footer';
 import Fade from 'react-reveal/Fade';
 
+import { analyticsEvent } from 'services/firebase/analytics';
 import WhatICanDo from './WhatICanDo';
 
 const HomeTitle = styled.h1``;
@@ -54,6 +55,9 @@ const Home = () => {
           </h2>
 
           <Button
+            onClick={() => {
+              analyticsEvent('click_cta_hero');
+            }}
             isResponsive={false}
             secondary={isDarkTheme()}
             noShadow
