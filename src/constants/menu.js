@@ -2,29 +2,12 @@ const menu = [
   {
     label: 'Início',
     action: '/',
-  },
-  {
-    label: 'Portfólio',
-    action: '/portfolio',
+    hideInFooter: true,
   },
   {
     label: 'Sobre',
     action: '/about',
-    // hideInFooter: true,
-  },
-  {
-    label: 'Anotações',
-    action: '/tips',
-    hideInNavbar: true,
-  },
-  {
-    label: 'Mais',
-    items: [
-      {
-        label: 'Anotações',
-        action: '/tips',
-      },
-    ],
+    hideInFooter: true,
   },
 ];
 

@@ -3,7 +3,6 @@
 import Icon from 'components/Icon';
 import Button from 'components/Button';
 import React from 'react';
-import { toggleChat } from 'utils';
 
 import { useSelector } from 'react-redux';
 import menuItems from 'constants/menu';
@@ -58,11 +57,10 @@ const Footer = () => {
             Vamos trocar uma ideia!
           </p>
           <Button
-            onClick={toggleChat}
             isResponsive={false}
             className="mt-5 w-full md:w-6/12 lg:4/12"
           >
-            Entre em contato
+            Vamos lá!
           </Button>
         </div>
         <div className="flex-grow flex flex-wrap justify-end md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">

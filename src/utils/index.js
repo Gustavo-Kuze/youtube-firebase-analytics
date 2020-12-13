@@ -37,4 +37,4 @@ const toggleChat = () => {
   }
 };
 
-export { classNames, toggleChat };
+export { classNames };

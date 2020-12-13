@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { classNames, toggleChat } from 'utils';
+import { classNames } from 'utils';
 import BigButton from 'components/Button';
 import Icon from 'components/Icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { types as themeTypes } from 'redux/ducks/settings';
 import menuItems from 'constants/menu';
-import { analyticsEvent } from 'services/firebase/analytics';
 import MenuDropdown from './MenuDropdown';
 
 const Navbar = () => {
@@ -35,7 +34,7 @@ const Navbar = () => {
         icon="code"
       >
         <Link to="/" className="font-semibold text-2xl tracking-tight pl-3">
-          React Tailwind
+          Firebase Analytics
         </Link>
       </Icon>
 
@@ -109,18 +108,13 @@ const Navbar = () => {
               <MenuDropdown label={label} items={items} />
             ))}
           <div>
-            <BigButton
-              onClick={toggleChat}
-              className="ml-0 mt-5 lg:mt-0 lg:ml-20"
-            >
-              Entre em contato
+            <BigButton className="ml-0 mt-5 lg:mt-0 lg:ml-20">
+              Vamos lá!
             </BigButton>
           </div>
           <button
             type="button"
             onClick={() => {
-              analyticsEvent('click_toggle_theme_navbar');
-
               dispatch({
                 type: themeTypes.SET_THEME,
                 payload: theme.themeName === 'dark' ? 'light' : 'dark',
